@@ -66,7 +66,7 @@ function initTheme() {
 
 function updateStreak() {
   const today = new Date().toISOString().split('T')[0];
-  let streakInfo = ls.get('streak_info', { streak: 0, lastDate: null });
+  let streakInfo = ls.get('streak_info', { streak: 0, lastDate: null, best: 0 });
   
   if (streakInfo.lastDate !== today) {
     const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
@@ -76,6 +76,9 @@ function updateStreak() {
       streakInfo.streak = 1;
     }
     streakInfo.lastDate = today;
+    if (streakInfo.streak > (streakInfo.best || 0)) {
+      streakInfo.best = streakInfo.streak;
+    }
     ls.set('streak_info', streakInfo);
   }
   
@@ -166,7 +169,6 @@ function renderSidebar() {
       <a href="planner.html" class="nav-item ${currentPath === 'planner.html' ? 'active' : ''}">📅 Planner</a>
       <a href="goals.html" class="nav-item ${currentPath === 'goals.html' ? 'active' : ''}">🎯 Goals</a>
       <a href="habits.html" class="nav-item ${currentPath === 'habits.html' ? 'active' : ''}">💪 Habits</a>
-      <a href="attendance.html" class="nav-item ${currentPath === 'attendance.html' ? 'active' : ''}">📋 Attendance</a>
       <a href="analytics.html" class="nav-item ${currentPath === 'analytics.html' ? 'active' : ''}">📈 Analytics</a>
       <a href="achievements.html" class="nav-item ${currentPath === 'achievements.html' ? 'active' : ''}">🏆 Achievements</a>
     </div>

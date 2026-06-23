@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student OS - Goals</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -11,10 +10,35 @@
     <main class="main-content">
       <div class="header">
         <h1>Goals</h1>
-        <button class="btn" id="btn-add-goal">Add Goal</button>
+        <button class="btn" id="btn-add-goal">+ Add Goal</button>
       </div>
-      <div id="goals-container" class="card-grid"></div>
+      <!-- Smart analytics row -->
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:24px;" id="goal-stats"></div>
+      <!-- Goals grid -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(340px,1fr)); gap:20px;" id="goals-container"></div>
     </main>
+  </div>
+  <!-- Goal Modal -->
+  <div class="modal-backdrop" id="goal-modal">
+    <div class="modal" style="max-width:520px; width:90%;">
+      <h2 id="goal-modal-title" style="margin:0 0 20px 0;">New Goal</h2>
+      <div class="form-group"><label>Goal Name *</label><input type="text" id="g-title" placeholder="e.g. Solve 100 LeetCode problems"></div>
+      <div class="form-group"><label>Description</label><textarea id="g-desc" rows="2" style="resize:vertical;"></textarea></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="form-group"><label>Category</label>
+          <select id="g-category"><option>Coding</option><option>Study</option><option>Fitness</option><option>Reading</option><option>Personal</option></select>
+        </div>
+        <div class="form-group"><label>Target Value *</label><input type="number" id="g-target" min="1"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="form-group"><label>Unit (e.g. problems, pages)</label><input type="text" id="g-unit" placeholder="problems"></div>
+        <div class="form-group"><label>Deadline</label><input type="date" id="g-deadline"></div>
+      </div>
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;">
+        <button class="btn" style="background:var(--bg-tertiary); color:var(--text-primary);" onclick="closeGoalModal()">Cancel</button>
+        <button class="btn" id="btn-save-goal">Save Goal</button>
+      </div>
+    </div>
   </div>
   <script src="./js/app.js"></script>
   <script type="module" src="./js/goals.js"></script>

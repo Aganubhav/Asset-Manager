@@ -1,0 +1,338 @@
+Upgrade the existing Student Productivity OS project.
+
+IMPORTANT:
+- Keep using only HTML, CSS and Vanilla JavaScript.
+- Do not use any backend.
+- Use LocalStorage for all data persistence.
+- Do not remove existing functionality.
+- Improve the UI and UX significantly.
+
+==================================================
+REMOVE ATTENDANCE MODULE
+==================================================
+
+Completely remove:
+
+- Attendance page
+- Attendance navigation item
+- Attendance widgets
+- Attendance charts
+
+Replace attendance-related statistics with productivity-related metrics.
+
+==================================================
+ADVANCED DASHBOARD
+==================================================
+
+Transform the dashboard into a real productivity command center.
+
+Create a "Today's Progress" section showing:
+
+- Tasks Completed Today
+- Tasks Remaining
+- Goals Progress
+- Habits Completed
+- Focus Sessions Completed
+- Productivity Score
+
+Add circular progress indicators.
+
+Add a large overall progress widget:
+
+Example:
+
+Today's Productivity
+78%
+
+Progress Ring Animation
+
+==================================================
+WEEKLY PROGRESS SECTION
+==================================================
+
+Create a weekly progress tracker.
+
+Show:
+
+Mon
+Tue
+Wed
+Thu
+Fri
+Sat
+Sun
+
+Display:
+
+- Study sessions
+- Completed tasks
+- Habit completion
+
+Visualize with charts and progress bars.
+
+==================================================
+MONTHLY PRODUCTIVITY OVERVIEW
+==================================================
+
+Add dashboard cards:
+
+- Total Tasks Completed
+- Total Focus Hours
+- Goals Achieved
+- Current Streak
+- Longest Streak
+
+Add trend indicators:
+
+↑ 15% better than last week
+
+↓ 5% lower than last week
+
+==================================================
+PRODUCTIVITY SCORE SYSTEM
+==================================================
+
+Create a calculated productivity score.
+
+Score should consider:
+
+- Completed tasks
+- Completed habits
+- Focus sessions
+- Goal progress
+- Daily consistency
+
+Display score:
+
+0–100
+
+Add color indicators:
+
+0–40 Needs Improvement
+
+41–70 Good
+
+71–90 Excellent
+
+91–100 Productivity Beast
+
+==================================================
+ENHANCED TASK MANAGER
+==================================================
+
+Redesign task creation.
+
+Task fields:
+
+- Title
+- Description
+- Category
+- Priority
+- Deadline
+- Estimated Time
+- Status
+
+Status:
+
+- Not Started
+- In Progress
+- Completed
+
+Priority:
+
+- Low
+- Medium
+- High
+- Critical
+
+Add:
+
+- Beautiful task modal
+- Task cards
+- Progress indicators
+- Task completion animation
+- Search
+- Filters
+- Sorting
+
+Sorting options:
+
+- Deadline
+- Priority
+- Completion
+- Recently Added
+
+Add task statistics:
+
+- Total Tasks
+- Completed
+- Pending
+- Overdue
+
+==================================================
+KANBAN BOARD
+==================================================
+
+Add a modern Kanban board view.
+
+Columns:
+
+- To Do
+- In Progress
+- Completed
+
+Drag-and-drop functionality.
+
+Smooth animations.
+
+==================================================
+ENHANCED GOALS PAGE
+==================================================
+
+Redesign goals completely.
+
+Goal fields:
+
+- Goal Name
+- Description
+- Category
+- Target Value
+- Current Progress
+- Deadline
+
+Display:
+
+- Completion Percentage
+- Remaining Progress
+- Days Remaining
+
+Add animated progress bars.
+
+Add milestone system.
+
+Example:
+
+Goal:
+100 LeetCode Problems
+
+Milestones:
+
+25
+50
+75
+100
+
+Automatically unlock milestones.
+
+==================================================
+SMART GOAL ANALYTICS
+==================================================
+
+Show:
+
+- Active Goals
+- Completed Goals
+- Completion Rate
+- Closest Goal To Completion
+
+Create charts for goal progress.
+
+==================================================
+ENHANCED HABIT TRACKER
+==================================================
+
+Add:
+
+- Daily View
+- Weekly View
+- Monthly View
+
+Display habit completion heatmap.
+
+Show consistency percentage.
+
+Example:
+
+Coding:
+85% Consistent
+
+Gym:
+72% Consistent
+
+Add streak counters per habit.
+
+==================================================
+FOCUS SESSION ANALYTICS
+==================================================
+
+Create dedicated analytics cards.
+
+Show:
+
+- Total Focus Sessions
+- Total Focus Hours
+- Average Daily Sessions
+- Weekly Study Time
+
+Use beautiful charts.
+
+==================================================
+ACHIEVEMENT SYSTEM UPGRADE
+==================================================
+
+Add achievement categories.
+
+Bronze:
+- First Task
+
+Silver:
+- 7 Day Streak
+
+Gold:
+- 50 Tasks Completed
+
+Platinum:
+- Productivity Master
+
+Show locked and unlocked achievements.
+
+Add unlock animations.
+
+==================================================
+QUICK ACTION PANEL
+==================================================
+
+Create dashboard shortcuts:
+
++ New Task
++ New Goal
++ New Habit
++ Start Focus Session
++ Create Note
+
+Floating action button for mobile.
+
+==================================================
+MODERN UI ENHANCEMENTS
+==================================================
+
+Add:
+
+- Glassmorphism cards
+- Gradient widgets
+- Hover animations
+- Smooth transitions
+- Better typography
+- Beautiful charts
+- Animated counters
+- Interactive progress rings
+- Skeleton loaders
+- Toast notifications
+
+Make the project feel like a premium SaaS dashboard similar to Linear, Notion and Vercel.
+
+==================================================
+FINAL GOAL
+==================================================
+
+The dashboard should immediately show a student's entire productivity status at a glance and look like a professional portfolio-worthy frontend project.

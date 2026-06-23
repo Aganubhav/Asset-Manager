@@ -11,11 +11,109 @@
     <main class="main-content">
       <div class="header">
         <h1>Tasks</h1>
-        <button class="btn" id="btn-add-task">Add Task</button>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <div class="view-toggle">
+            <button class="view-toggle-btn active" id="btn-list-view" onclick="setView('list')">List</button>
+            <button class="view-toggle-btn" id="btn-kanban-view" onclick="setView('kanban')">Kanban</button>
+          </div>
+          <button class="btn" id="btn-add-task">+ Add Task</button>
+        </div>
       </div>
-      <div id="tasks-container" class="card-grid"></div>
+
+      <!-- Stats row -->
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:24px;" id="task-stats"></div>
+
+      <!-- Search + Filters -->
+      <div class="glass-card" style="padding:16px; margin-bottom:20px; display:flex; gap:12px; flex-wrap:wrap;">
+        <input type="text" id="task-search" placeholder="Search tasks..." style="flex:1; min-width:200px; padding:8px 12px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-primary); color:var(--text-primary);">
+        <select id="filter-category" style="padding:8px 12px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-primary); color:var(--text-primary);">
+          <option value="">All Categories</option>
+          <option>DSA</option><option>College</option><option>Projects</option>
+          <option>Placement</option><option>Exams</option><option>Personal</option>
+        </select>
+        <select id="filter-priority" style="padding:8px 12px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-primary); color:var(--text-primary);">
+          <option value="">All Priorities</option>
+          <option>Low</option><option>Medium</option><option>High</option><option>Critical</option>
+        </select>
+        <select id="sort-tasks" style="padding:8px 12px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-primary); color:var(--text-primary);">
+          <option value="newest">Newest First</option>
+          <option value="deadline">By Deadline</option>
+          <option value="priority">By Priority</option>
+        </select>
+      </div>
+
+      <!-- List View -->
+      <div id="tasks-list-view">
+        <div id="tasks-container" style="display:flex; flex-direction:column; gap:12px;"></div>
+      </div>
+
+      <!-- Kanban View -->
+      <div id="tasks-kanban-view" style="display:none;">
+        <div class="kanban-board">
+          <div class="kanban-col" id="col-not-started" data-status="Not Started">
+            <div class="kanban-col-header">
+              <span>📋 To Do</span>
+              <span id="count-not-started" class="category-badge" style="background:var(--bg-tertiary);"></span>
+            </div>
+            <div class="kanban-cards" id="cards-not-started"></div>
+          </div>
+          <div class="kanban-col" id="col-in-progress" data-status="In Progress">
+            <div class="kanban-col-header">
+              <span>⚡ In Progress</span>
+              <span id="count-in-progress" class="category-badge" style="background:rgba(245,158,11,0.15); color:var(--warning);"></span>
+            </div>
+            <div class="kanban-cards" id="cards-in-progress"></div>
+          </div>
+          <div class="kanban-col" id="col-completed" data-status="Completed">
+            <div class="kanban-col-header">
+              <span>✅ Done</span>
+              <span id="count-completed" class="category-badge" style="background:rgba(16,185,129,0.15); color:var(--success);"></span>
+            </div>
+            <div class="kanban-cards" id="cards-completed"></div>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
+
+  <!-- Add/Edit Task Modal -->
+  <div class="modal-backdrop" id="task-modal">
+    <div class="modal" style="max-width:560px; width:90%;">
+      <h2 id="modal-title" style="margin:0 0 20px 0;">New Task</h2>
+      <div class="form-group"><label>Task Title *</label><input type="text" id="t-title" placeholder="What needs to be done?"></div>
+      <div class="form-group"><label>Description</label><textarea id="t-desc" rows="3" placeholder="Details..." style="resize:vertical;"></textarea></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="form-group">
+          <label>Category</label>
+          <select id="t-category">
+            <option>DSA</option><option>College</option><option>Projects</option>
+            <option>Placement</option><option>Exams</option><option>Personal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Priority</label>
+          <select id="t-priority">
+            <option>Low</option><option selected>Medium</option><option>High</option><option>Critical</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="form-group"><label>Deadline</label><input type="date" id="t-deadline"></div>
+        <div class="form-group"><label>Est. Time (minutes)</label><input type="number" id="t-estTime" placeholder="e.g. 60" min="1"></div>
+      </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select id="t-status">
+          <option>Not Started</option><option>In Progress</option><option>Completed</option>
+        </select>
+      </div>
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;">
+        <button class="btn" style="background:var(--bg-tertiary); color:var(--text-primary);" onclick="closeTaskModal()">Cancel</button>
+        <button class="btn" id="btn-save-task">Save Task</button>
+      </div>
+    </div>
+  </div>
+
   <script src="./js/app.js"></script>
   <script type="module" src="./js/tasks.js"></script>
 </body>

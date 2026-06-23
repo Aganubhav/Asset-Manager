@@ -24,7 +24,6 @@ export default defineConfig({
         planner: path.resolve(import.meta.dirname, "planner.html"),
         goals: path.resolve(import.meta.dirname, "goals.html"),
         habits: path.resolve(import.meta.dirname, "habits.html"),
-        attendance: path.resolve(import.meta.dirname, "attendance.html"),
         analytics: path.resolve(import.meta.dirname, "analytics.html"),
         achievements: path.resolve(import.meta.dirname, "achievements.html"),
       }
