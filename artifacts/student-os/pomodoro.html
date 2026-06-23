@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student OS - Pomodoro</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <main class="main-content">
+      <div class="header">
+        <h1>Pomodoro</h1>
+      </div>
+      <div style="text-align: center; margin-top: 50px;">
+        <div id="timer-display" style="font-size: 6rem; font-weight: bold; margin-bottom: 20px;">25:00</div>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+          <button class="btn" id="btn-focus">Focus</button>
+          <button class="btn" id="btn-short-break" style="background: var(--bg-tertiary); color: var(--text-primary);">Short Break</button>
+          <button class="btn" id="btn-long-break" style="background: var(--bg-tertiary); color: var(--text-primary);">Long Break</button>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+          <button class="btn" id="btn-start">Start</button>
+          <button class="btn" id="btn-pause" style="display: none;">Pause</button>
+          <button class="btn" id="btn-reset" style="background: var(--danger);">Reset</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./js/app.js"></script>
+  <script type="module" src="./js/pomodoro.js"></script>
+</body>
+</html>

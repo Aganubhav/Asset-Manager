@@ -1,0 +1,535 @@
+Build a COMPLETE production-quality web application called:
+
+🎓 STUDENT PRODUCTIVITY OS
+
+IMPORTANT RULES:
+
+- Use ONLY HTML, CSS and Vanilla JavaScript.
+- Do NOT use React.
+- Do NOT use Next.js.
+- Do NOT use Node.js.
+- Do NOT use Express.
+- Do NOT use MongoDB.
+- Do NOT use Firebase.
+- Do NOT use Supabase.
+- Do NOT use any backend.
+- Do NOT use APIs.
+- Store all data using browser LocalStorage.
+- Project must be deployable as a static website.
+- Code should be clean, modular and well commented.
+
+==================================================
+PROJECT IDEA
+==================================================
+
+Student Productivity OS is an all-in-one productivity dashboard for students.
+
+The application combines:
+
+- Dashboard
+- Task Manager
+- Notes Vault
+- Pomodoro Timer
+- Goal Tracker
+- Habit Tracker
+- Attendance Tracker
+- Study Planner
+- Analytics Dashboard
+- Achievement System
+- Streak System
+
+Everything should work completely offline using LocalStorage.
+
+==================================================
+DESIGN REQUIREMENTS
+==================================================
+
+Create a premium modern SaaS UI.
+
+Design inspiration:
+
+- Linear
+- Notion
+- Vercel
+- Arc Browser
+
+UI Requirements:
+
+- Dark Mode
+- Light Mode
+- Theme Switcher
+- Glassmorphism Cards
+- Beautiful Gradients
+- Smooth Animations
+- Hover Effects
+- Animated Sidebar
+- Modern Dashboard
+- Responsive Design
+- Mobile Friendly
+- Tablet Friendly
+- Desktop Friendly
+
+Use:
+
+- CSS Variables
+- CSS Grid
+- Flexbox
+- Responsive Layouts
+- Modern Typography
+
+Add:
+
+- Loading Screen
+- Page Transitions
+- Toast Notifications
+- Empty States
+- Skeleton Loaders
+
+==================================================
+FOLDER STRUCTURE
+==================================================
+
+Student-Productivity-OS/
+
+index.html
+
+dashboard.html
+tasks.html
+notes.html
+pomodoro.html
+planner.html
+goals.html
+habits.html
+attendance.html
+analytics.html
+achievements.html
+
+css/
+style.css
+
+js/
+app.js
+tasks.js
+notes.js
+pomodoro.js
+planner.js
+goals.js
+habits.js
+attendance.js
+analytics.js
+achievements.js
+
+assets/
+
+==================================================
+LANDING PAGE
+==================================================
+
+Create a beautiful landing page.
+
+Sections:
+
+Hero Section
+
+Headline:
+
+"Your Complete Productivity Operating System"
+
+Subheading:
+
+Manage studies, goals, habits, notes and performance from one dashboard.
+
+Buttons:
+
+- Get Started
+- Explore Features
+
+Add:
+
+- Animated Background
+- Floating Shapes
+- Statistics Section
+- Testimonials
+- Features Grid
+- Footer
+
+==================================================
+DASHBOARD PAGE
+==================================================
+
+Create a modern dashboard.
+
+Show cards:
+
+- Total Tasks
+- Completed Tasks
+- Today's Study Hours
+- Current Streak
+- Attendance Percentage
+- Active Goals
+
+Create quick action buttons:
+
+- Add Task
+- Start Focus Session
+- Create Note
+- Add Goal
+
+Create recent activity section.
+
+Create motivational quote widget.
+
+Create today's progress widget.
+
+==================================================
+TASK MANAGER
+==================================================
+
+Task Fields:
+
+- Task Name
+- Description
+- Category
+- Priority
+- Deadline
+
+Categories:
+
+- DSA
+- College
+- Projects
+- Placement
+- Exams
+- Personal
+
+Priorities:
+
+- Low
+- Medium
+- High
+
+Features:
+
+- Create Task
+- Edit Task
+- Delete Task
+- Mark Complete
+- Search Tasks
+- Filter Tasks
+- Sort Tasks
+
+Create beautiful task cards.
+
+Save everything in LocalStorage.
+
+==================================================
+NOTES VAULT
+==================================================
+
+Features:
+
+- Create Notes
+- Edit Notes
+- Delete Notes
+- Search Notes
+- Pin Notes
+- Favorite Notes
+
+Add:
+
+- Rich Looking Notes Cards
+- Categories
+- Tags
+
+Auto-save notes.
+
+Store in LocalStorage.
+
+==================================================
+POMODORO TIMER
+==================================================
+
+Build fully functional Pomodoro.
+
+Modes:
+
+- 25 min Focus
+- 5 min Short Break
+- 15 min Long Break
+
+Buttons:
+
+- Start
+- Pause
+- Reset
+
+Features:
+
+- Circular Timer
+- Progress Ring
+- Session Counter
+- Focus Statistics
+
+Save completed sessions.
+
+==================================================
+STUDY PLANNER
+==================================================
+
+Create weekly planner.
+
+Days:
+
+- Monday
+- Tuesday
+- Wednesday
+- Thursday
+- Friday
+- Saturday
+- Sunday
+
+Features:
+
+- Add Study Slots
+- Edit Slots
+- Delete Slots
+- Drag and Drop Timetable
+
+Display timetable beautifully.
+
+==================================================
+GOAL TRACKER
+==================================================
+
+Goal Fields:
+
+- Goal Name
+- Target Value
+- Current Progress
+- Deadline
+
+Examples:
+
+- 100 LeetCode Problems
+- 50 Study Hours
+- Complete Project
+- Finish Course
+
+Features:
+
+- Progress Bars
+- Completion Percentage
+- Goal Status
+
+Save data.
+
+==================================================
+HABIT TRACKER
+==================================================
+
+Create daily habits tracker.
+
+Examples:
+
+- Coding
+- Gym
+- Reading
+- Meditation
+- Water Intake
+
+Features:
+
+- Add Habit
+- Delete Habit
+- Mark Complete
+
+Display:
+
+- Daily Status
+- Weekly Progress
+- Monthly Progress
+
+Show streaks.
+
+==================================================
+ATTENDANCE TRACKER
+==================================================
+
+Fields:
+
+- Subject Name
+- Total Classes
+- Attended Classes
+
+Calculate automatically:
+
+Attendance %
+
+Show:
+
+Green:
+Above 75%
+
+Yellow:
+60-75%
+
+Red:
+Below 60%
+
+Add attendance analytics.
+
+==================================================
+ANALYTICS DASHBOARD
+==================================================
+
+Use Chart.js.
+
+Create:
+
+1. Weekly Study Hours Chart
+2. Monthly Productivity Chart
+3. Goal Completion Chart
+4. Attendance Chart
+5. Habit Consistency Chart
+
+Show:
+
+- Productivity Score
+- Completion Rate
+- Performance Summary
+
+==================================================
+STREAK SYSTEM
+==================================================
+
+Track:
+
+- Daily Login
+- Daily Tasks
+- Daily Study Sessions
+
+Show:
+
+Current Streak
+
+Best Streak
+
+Streak Calendar
+
+Display fire icon animations.
+
+==================================================
+ACHIEVEMENT SYSTEM
+==================================================
+
+Create unlockable badges.
+
+Examples:
+
+🏆 First Task Completed
+
+🏆 7 Day Streak
+
+🏆 30 Day Streak
+
+🏆 50 Tasks Completed
+
+🏆 100 Study Hours
+
+🏆 Goal Crusher
+
+🏆 Productivity Master
+
+Create beautiful achievement cards.
+
+Add unlock animations.
+
+==================================================
+NOTIFICATIONS
+==================================================
+
+Create custom toast notifications.
+
+Examples:
+
+Task Created
+
+Task Completed
+
+Goal Achieved
+
+Habit Completed
+
+Pomodoro Finished
+
+==================================================
+SETTINGS PAGE FEATURES
+==================================================
+
+Create settings modal.
+
+Options:
+
+- Dark Mode
+- Light Mode
+- Reset All Data
+- Export Data
+- Import Data
+
+==================================================
+LOCAL STORAGE
+==================================================
+
+Store:
+
+Tasks
+Notes
+Goals
+Habits
+Attendance
+Pomodoro Sessions
+Achievements
+Theme Settings
+
+==================================================
+ANIMATIONS
+==================================================
+
+Add:
+
+- Card Hover Effects
+- Button Hover Effects
+- Smooth Transitions
+- Fade In Effects
+- Slide In Effects
+- Progress Animations
+- Achievement Unlock Animation
+
+==================================================
+RESPONSIVENESS
+==================================================
+
+Must work perfectly on:
+
+Mobile
+Tablet
+Laptop
+Desktop
+
+==================================================
+CODE QUALITY
+==================================================
+
+Generate COMPLETE code.
+
+No placeholders.
+
+No pseudo-code.
+
+Build all pages.
+
+Connect all pages together.
+
+Ensure all features function using LocalStorage.
+
+Create a polished project that looks like a premium SaaS product and is suitable for a frontend developer portfolio.
