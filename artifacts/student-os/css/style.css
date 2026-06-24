@@ -277,6 +277,87 @@ body {
   color: var(--text-primary);
 }
 
+/* ── Theme Toggle ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: var(--sidebar-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s;
+  user-select: none;
+}
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.theme-toggle-pill {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: #f59e0b;
+  transition: background 0.4s cubic-bezier(0.4,0,0.2,1);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+[data-theme="dark"] .theme-toggle-pill {
+  background: #6b5ef5;
+}
+
+.theme-toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+[data-theme="dark"] .theme-toggle-knob {
+  transform: translateX(20px);
+}
+
+.theme-toggle-knob.spin {
+  animation: knob-spin 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes knob-spin {
+  0%   { transform: translateX(var(--knob-from, 0px)) rotate(0deg)   scale(1);   }
+  40%  { transform: translateX(var(--knob-mid,  10px)) rotate(180deg) scale(1.15); }
+  100% { transform: translateX(var(--knob-to,  20px)) rotate(360deg) scale(1);   }
+}
+
+/* Full-page theme ripple flash */
+.theme-ripple {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  animation: theme-ripple-fade 0.45s ease forwards;
+}
+@keyframes theme-ripple-fade {
+  0%   { opacity: 0.18; }
+  100% { opacity: 0;    }
+}
+.theme-ripple.to-dark  { background: #0d0b1e; }
+.theme-ripple.to-light { background: #f8f7ff; }
+
 /* Utilities */
 .text-gradient {
   background: var(--gradient-1);

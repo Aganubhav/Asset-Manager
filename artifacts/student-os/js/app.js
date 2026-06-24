@@ -54,14 +54,43 @@ function toast(message, type = 'info') {
 }
 
 function toggleTheme() {
-  const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', theme);
-  ls.set('theme', theme);
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+
+  // Spin the knob
+  const knob = document.querySelector('.theme-toggle-knob');
+  if (knob) {
+    knob.style.setProperty('--knob-from', isDark ? '20px' : '0px');
+    knob.style.setProperty('--knob-mid',  '10px');
+    knob.style.setProperty('--knob-to',   isDark ? '0px'  : '20px');
+    knob.classList.remove('spin');
+    void knob.offsetWidth; // force reflow to restart animation
+    knob.classList.add('spin');
+    knob.addEventListener('animationend', () => knob.classList.remove('spin'), { once: true });
+  }
+
+  // Update icon label
+  const label = document.querySelector('.theme-toggle-label');
+  if (label) label.textContent = next === 'dark' ? 'Dark Mode' : 'Light Mode';
+
+  // Full-page ripple flash
+  const ripple = document.createElement('div');
+  ripple.className = `theme-ripple ${next === 'dark' ? 'to-dark' : 'to-light'}`;
+  document.body.appendChild(ripple);
+  ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
+
+  document.documentElement.setAttribute('data-theme', next);
+  ls.set('theme', next);
 }
 
 function initTheme() {
   const theme = ls.get('theme', 'light');
   document.documentElement.setAttribute('data-theme', theme);
+  // Sync toggle label + knob icon after sidebar renders
+  requestAnimationFrame(() => {
+    const label = document.querySelector('.theme-toggle-label');
+    if (label) label.textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
+  });
 }
 
 function updateStreak() {
@@ -174,7 +203,12 @@ function renderSidebar() {
     </div>
     <div class="sidebar-footer">
       <div id="sidebar-streak" style="margin-bottom: 10px;">🔥 0 Days</div>
-      <button class="btn" style="width: 100%; margin-bottom: 5px;" onclick="toggleTheme()">Theme ☀️/🌙</button>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <div class="theme-toggle-pill">
+          <div class="theme-toggle-knob" id="theme-knob">☀️</div>
+        </div>
+        <span class="theme-toggle-label">Light Mode</span>
+      </button>
       <button class="btn" style="width: 100%; background: var(--bg-tertiary); color: var(--text-primary);" onclick="showSettings()">Settings</button>
     </div>
   `;
